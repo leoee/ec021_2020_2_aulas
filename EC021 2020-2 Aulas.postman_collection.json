@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "883858ad-d011-4f1f-8be5-03b1dd0c41c6",
+		"_postman_id": "25ac1be6-92cf-4531-833c-3af6ac376e9e",
 		"name": "EC021 2020/2 Aulas",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -11,7 +11,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "940eb1f3-14ae-481b-a405-94c34b279427",
+						"id": "11fe6a58-9425-42cf-8ea5-76370bf7ada6",
 						"exec": [
 							"//Convertendo a respose em JSON\r",
 							"var response = pm.response.json();\r",
@@ -31,7 +31,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"lote\": \"X1Adauto\",\r\n    \"conteudo\": \"200\",\r\n    \"validade\": \"17/11/2020\"\r\n}",
+					"raw": "{\r\n    \"lote\": \"Teste_Leo\",\r\n    \"conteudo\": \"200\",\r\n    \"validade\": \"17/11/2020\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -55,57 +55,12 @@
 			"response": []
 		},
 		{
-			"name": "Update Toddy",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "89e341f5-d3b0-44ee-8f25-3255987ddc83",
-						"exec": [
-							"pm.test(\"Status code is 200\", function () {\r",
-							"    pm.response.to.have.status(200);\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "PATCH",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"lote\": \"X1B\",\r\n    \"conteudo\": \"250\",\r\n    \"validade\": \"17/12/2020\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:5000/ec021/{{routerVersion}}/toddy/{{toddyId}}",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"ec021",
-						"{{routerVersion}}",
-						"toddy",
-						"{{toddyId}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "Search Toddy",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "4336e818-1d79-46ee-b58e-64907f4a5c67",
+						"id": "b5caaac2-e2b3-4a49-8997-11c2613152cd",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
@@ -141,12 +96,47 @@
 			"response": []
 		},
 		{
+			"name": "Search All",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7ae1967c-1973-4b7e-8ec6-f5dc5d1c56c2",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/ec021/{{routerVersion}}/toddy",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"ec021",
+						"{{routerVersion}}",
+						"toddy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Remove Toddy",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "c027d7d4-f6ff-4a9a-939a-3237fe2fd70b",
+						"id": "9f9c1dbd-fcd7-4a50-b228-2dac12bf581b",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {\r",
 							"    pm.response.to.have.status(200);\r",
@@ -159,6 +149,51 @@
 			"request": {
 				"method": "DELETE",
 				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/ec021/{{routerVersion}}/toddy/{{toddyId}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"ec021",
+						"{{routerVersion}}",
+						"toddy",
+						"{{toddyId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Toddy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fe68b4bd-683c-43df-91b0-79114caf4e7c",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"lote\": \"X1B\",\r\n    \"conteudo\": \"250\",\r\n    \"validade\": \"17/12/2020\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
 					"raw": "http://localhost:5000/ec021/{{routerVersion}}/toddy/{{toddyId}}",
 					"protocol": "http",
